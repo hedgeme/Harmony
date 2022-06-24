@@ -1,0 +1,2 @@
+./hmy blockchain latest-headers | jq .result | jq '.["beacon-chain-header"]'  | jq -r .number | xargs printf "%d\n" && ./hmy blockchain latest-headers --node="api.s0.t.hmny.io" | jq .result | jq '.["beacon-chain-header"]'  | jq -r .number | xargs printf "%d\n"
+./hmy blockchain latest-headers | jq .result | jq '.["shard-chain-header"]'  | jq -r .number | xargs printf "%d\n" && ./hmy blockchain latest-headers --node="api.s1.t.hmny.io" | jq .result | jq '.["shard-chain-header"]'  | jq -r .number | xargs printf "%d\n"
