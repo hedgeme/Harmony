@@ -1,1 +1,14 @@
 sudo apt update && sudo apt upgrade  //system updates and upgrade
+sudo apt autoremove  //removes the dependencies that were downloaded when the most recently uninstalled program was installed.
+sudo service harmony stop  //stops Harmony service while maintenance is performed
+sudo service harmony start  //Activate Harmony service
+sudo service harmony restart  //restart Harmony service
+sudo service harmony status  //Check status of the Harmony Service
+sudo nano harmony.conf  //edit conf file if needed. This is used to enable/disable pruning
+./harmony config dump harmony.conf  //dumps your current harmony.conf file for the default
+htop  //cross-platform interactive process viewer
+dd if=/dev/zero of=/tmp/test1.img bs=1G count=1 oflag=dsync  //Check disk writing speed
+tail -f latest/zero*.log | grep prune  //Check if pruning is occurring
+tail -f latest/zero*.log | grep 'elapsed'  //Time it takes to create/sync block
+vnstat -l  //Check Bandwidth usage
+tail -f latest/zero*.log | grep BINGO  //Check for Bingo consensus
